@@ -1,6 +1,23 @@
 {%  extends 'base.html' %}
 {% block content %}
     <section>
-        <h1>hello</h1>
+        <div class="container">
+            <div class="row">
+                <h1>saldkad</h1>
+                {% for items in categories %}
+                    <div class="col-xs-12">
+                        <h2>{{ items.title }}</h2>
+                        {% for dish in items.dishes %}
+                            <div>
+                                <div><h3>{{ dish.title }}</h3></div>
+                                <div><p>{{ dish.description }}</p></div>
+                                <div><p>{{ dish.price }} $</p></div>
+                                <div><img src="{{ dish.photo.url }}"></img></div>
+                            </div>
+                            {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
     </section>
 {% endblock %}
