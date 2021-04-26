@@ -37,8 +37,8 @@ STATICFILES_DIRS = (
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '2mtwqe#*!auj%gmk9v_1yzh(_0u9d-k_a$#l_$2h$k5@w^%+_l'
-
+#SECRET_KEY = '2mtwqe#*!auj%gmk9v_1yzh(_0u9d-k_a$#l_$2h$k5@w^%+_l'
+SECRET_KEY = SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -77,7 +77,7 @@ ROOT_URLCONF = 'gusto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR , 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
