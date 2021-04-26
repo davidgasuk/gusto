@@ -56,7 +56,7 @@ class Banners(models.Model):
     photo = models.ImageField(upload_to=get_file_name_banners)
     is_visible = models.BooleanField(default=True)
 
-class UsersMesseges(models.Model):
+class UsersMesssages(models.Model):
     user_name = models.CharField(max_length=50)
     user_email = models.EmailField()
     message = models.CharField(max_length=200)
