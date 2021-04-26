@@ -42,7 +42,7 @@ SECRET_KEY = '2mtwqe#*!auj%gmk9v_1yzh(_0u9d-k_a$#l_$2h$k5@w^%+_l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gusto-david.herokuapp.com']
 
 
 # Application definition
