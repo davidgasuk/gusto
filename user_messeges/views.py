@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.shortcuts import render
-from main_gusto.models import UsersMessages
+from main_gusto.models import UsersMesseges
 from django.core.paginator import Paginator
 
 def messege_processed(request,pk):
@@ -9,7 +9,7 @@ def messege_processed(request,pk):
         messege.is_processed=True
         messege.save()
         return HttpResponseRedirect("/user_messeges/view")
-    except UsersMessages.DoesNotExist:
+    except UsersMesseges.DoesNotExist:
         return HttpResponseNotFound("<h2>Messege not found</h2>")
 
 def messeges_view(request):
