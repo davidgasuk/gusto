@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
 import datetime
 from .models import Category, Dish, Events, Banners
-from .forms import UserMessageForm
+from .forms import UserMessegeForm
 
 def test(request):
     return render(request,'test.html')
 
 def main(request):
     if request.method == 'POST':
-        form = UserMessageForm(request.POST)
+        form = UserMessegeForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
@@ -25,7 +25,7 @@ def main(request):
         item.dishes = Dish.objects.filter(category=item.pk).filter(is_visible=True)
 
     events = Events.objects.filter(event_date__gte = datetime.date.today())
-    users_masseges_form = UserMessageForm
+    users_masseges_form = UserMessegeForm
     return render(request, 'index.html', context={'categories':categories,
                                                   'special_categories' : special_categories,
                                                   'banners' : banners,
