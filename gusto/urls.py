@@ -18,11 +18,19 @@ from django.urls import path, include
 from gusto.views import hello
 from django.conf.urls.static import static
 from gusto import settings
-
+from accounts.views import *
 
 urlpatterns = [
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
+    path('register/', register_view, name='register'),
+
     path('admin/', admin.site.urls),
-    path('', include('main_gusto.urls'))
+    path('', include('main_gusto.urls')),
+    path('menu/', include('menu_gusto.urls')),
+
+    path('user_messeges/', include('user_messeges.urls'))
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main_gusto'
+    'main_gusto',
+    'menu_gusto',
+    'accounts',
+    'user_messeges'
 ]
 
 MIDDLEWARE = [
@@ -125,5 +128,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+_PATH = os.path.abspath(os.path.dirname(__file__))
+MEDIA_ROOT = os.path.join(_PATH, 'files', 'media')
+MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
