@@ -1,7 +1,7 @@
 from django import forms
-from .models import UsersMesseges
+from .models import UsersMessages
 
-class UserMessegeForm(forms.ModelForm):
+class UserMessageForm(forms.ModelForm):
     user_name = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'type': 'text', 'id': 'name', 'class': 'form-control',
                                                               'placeholder': 'Ім\'я', 'required': 'required'}))
     user_email = forms.EmailField(widget=forms.TextInput(attrs={'type': 'email', 'id': 'email',
@@ -13,7 +13,7 @@ class UserMessegeForm(forms.ModelForm):
                                               'rows': '4', 'placeholder': 'Повідомлення',
                                               'required': 'required'}))
     class Meta():
-        model = UsersMesseges
+        model = UsersMessages
         fields = ('user_name', 'user_email', 'message')
 
 
