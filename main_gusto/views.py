@@ -3,9 +3,6 @@ import datetime
 from .models import Category, Dish, Events, Banners
 from .forms import UserMessageForm
 
-def test(request):
-    return render(request,'test.html')
-
 def main(request):
     if request.method == 'POST':
         form = UserMessageForm(request.POST)
